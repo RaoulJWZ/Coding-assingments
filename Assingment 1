@@ -1,3 +1,7 @@
+//This program asks to input a number.
+//It will check out if the number is odd or even and then calculates with the following formula's:
+//if even: sum = (first two numbers + second two numbers + third two numbers + etc.) / number.
+//if odd:  sum = (first two numbers + second two numbers + etc.) / (number-1).
 #include <iostream>
 
 using namespace std;
@@ -5,16 +9,19 @@ using namespace std;
 void formuleEvenNumber(int number);
 void formuleOddNumber(int number);
 
-int userNumber;
 
 int main()
 {
+    int userNumber;
+    int numberType;
     cout << "type a number." << endl;
     cin >> userNumber;
-    if(userNumber % 2 == 0)
-        formuleEvenNumber(userNumber);
-    if(userNumber % 2 != 0)
-        formuleOddNumber(userNumber);
+    numberType = userNumber % 2;
+    switch(numberType){
+    case 0: formuleEvenNumber(userNumber);
+
+    case 1: formuleOddNumber(userNumber);
+    }
 
 
 
